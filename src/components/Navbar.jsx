@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building2, Building2Icon, Home } from 'lucide-react';
+import { Building2, Building2Icon, Home, Search } from 'lucide-react';
 
 const Navbar = () => {
   return (
@@ -17,7 +17,10 @@ const Navbar = () => {
           <a href="#Projects" className="cursor-pointer hover:text-gray-400">Projects</a>
           <a href="#About Us" className="cursor-pointer hover:text-gray-400">About Us</a>
         </ul>
-        <button className="hidden md:block bg-white px-8 py-2 rounded-full">Sign Up</button>
+        <div className="flex items-center gap-4">
+          <button className="hidden md:block bg-white px-8 py-2 rounded-full">Sign Up</button>
+          <Search size={24} className="text-white cursor-pointer hover:text-gray-400" />
+        </div>
       </div>
     </div>
   );
