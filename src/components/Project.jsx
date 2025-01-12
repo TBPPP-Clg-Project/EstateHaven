@@ -148,7 +148,7 @@ const Project = () => {
               </div>
               
               <div className="p-4">
-                <p className="text-green-500 text-sm mb-1">{property.location}</p>
+                <p className="text-blue-600 text-sm mb-1">{property.location}</p>
                 <h3 className="font-semibold text-lg mb-2">{property.title}</h3>
                 
                 <div className="flex justify-between items-center mb-3">
@@ -184,7 +184,7 @@ const Project = () => {
                 
                 <div className="flex justify-between items-center">
                   <p className="text-xl font-bold">${property.price.toFixed(2)}</p>
-                  <button className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors">
+                  <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-600 transition-colors">
                     View details
                   </button>
                 </div>
