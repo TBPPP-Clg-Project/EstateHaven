@@ -1,66 +1,43 @@
 import { useState } from 'react';
-import { Building2, Bell, User, LogOut } from 'lucide-react';
+import { Building2, User, Phone } from 'lucide-react'; // Import Phone icon
+import './Navbar.css';
 
 const Navbar = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-  
+
   return (
-    <nav className="absolute top-0 w-full bg-transparent z-50">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center h-12">
-          <div className="flex-shrink-0 flex items-center">
-            <Building2 size={20} className="text-white" />
-            <h1 className="text-xl font-bold text-cyan-600">EstateHeaven</h1>
+    <nav className="navbar">
+      <div className="navbar-container">
+        <div className="navbar-content">
+          {/* Navigation Links */}
+          <div className="nav-links">
+            <a href="#properties" className="nav-link">Properties</a>
+           <a href="#agents" className="nav-link">Agents</a>
+            <a href="#About" className="nav-link">About</a>
           </div>
-          
-          <div className="hidden md:flex items-center space-x-4">
-            <a href="#properties" className="text-black-950 hover:text-gray-900 px-2 py-1 text-sm rounded-md transition-all ">
-              Properties
-            </a>
-            <a href="#buy" className="text-black-950 hover:text-gray-900 px-2 py-1 text-sm rounded-md transition-all ">
-              Buy
-            </a>
-            <a href="#sell" className="text-black-950 hover:text-gray-900 px-2 py-1 text-sm rounded-md transition-all ">
-              Sell
-            </a>
-            <a href="#rent" className="text-black-950 hover:text-gray-900 px-2 py-1 text-sm rounded-md transition-all">
-              Rent
-            </a>
-            <a href="#agents" className="text-black-950 hover:text-gray-900 px-2 py-1 text-sm rounded-md transition-all ">
-              Agents
-            </a>
-            <a href="#contact" className="text-black-950 hover:text-gray-900 px-2 py-1 text-sm rounded-md transition-all">
-              Contact
-            </a>
+
+          {/* Logo Section */}
+          <div className="logo-section">
+            <Building2 size={32} className="logo-icon" />
+            <h1 className="logo-title">EstateHeaven</h1>
           </div>
-          
-          <div className="flex items-center space-x-2">
-            <button className="p-1 rounded-full hover:bg-gray-100">
-              <Bell className="h-4 w-4 text-cyan-600" />
-            </button>
-            
-            <div className="relative">
+
+          {/* Phone Number and Profile Section */}
+          <div className="profile-section">
+            {/* Phone Number */}
+            <div className="phone-section">
+              <Phone className="phone-icon" />
+              <span className="phone-number">+91 (555) 123-6567</span>
+            </div>
+
+            {/* Profile Menu */}
+            <div className="profile-menu">
               <button
                 onClick={() => setIsProfileOpen(!isProfileOpen)}
-                className="flex items-center space-x-2 p-1 rounded-full hover:bg-gray-100"
+                className="profile-button"
               >
-                <User className="h-4 w-4 text-cyan-600" />
+                <User className="icon" />
               </button>
-              
-              {isProfileOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg py-1">
-                  <a href="#profile" className="block px-3 py-1 text-sm text-gray-700 hover:bg-gray-100">
-                    Profile
-                  </a>
-                  <a href="#settings" className="block px-3 py-1 text-sm text-gray-700 hover:bg-gray-100">
-                    Settings
-                  </a>
-                  <button className="flex items-center w-full px-3 py-1 text-sm text-red-600 hover:bg-gray-100">
-                    <LogOut className="h-3 w-3 mr-2" />
-                    Sign out
-                  </button>
-                </div>
-              )}
             </div>
           </div>
         </div>

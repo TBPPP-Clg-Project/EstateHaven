@@ -1,0 +1,123 @@
+/* Navbar Styles */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: 50;
+}
+
+.navbar-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+}
+
+/* Logo Section */
+.logo-section {
+    display: flex;
+    align-items: center; 
+    justify-content: center; /* Center the logo title */
+    flex-grow: 1;
+    margin-left: 170px;
+}
+
+.logo-icon {
+    color: white;
+    margin-right: 10px;
+}
+
+.logo-title {
+    font-size: 35px;
+    font-weight: bold;
+    color: #f3f4f6;
+    text-align: center;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0; /* Remove any left margin */
+    position: absolute; /* Position at the left corner */
+    left: 190px;
+}
+
+.nav-link {
+    color: #06b6d4; /* Set navbar links to white */
+    padding: 4px 8px;
+    font-size: 17px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    color: #f3f4f6; /* Hover effect with brand color */
+}
+/* Phone Section */
+.phone-section {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: white; /* Set the text color to white */
+    margin-right: 10px; /* Add spacing before the profile icon */
+}
+
+.phone-icon {
+    color: #06b6d4; /* White color for the phone icon */
+    width: 20px; /* Adjust size */
+    height: 20px;
+}
+
+.phone-number {
+    font-size: 16px;
+    color: #06b6d4; /* Blue color for the phone number */
+    font-weight: 500; /* Medium weight for better visibility */
+}
+
+.phone-icon:hover{
+    color: aliceblue;
+}
+.phone-number:hover{
+    color: aliceblue;
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profile-menu {
+    position: relative;
+}
+
+.profile-button {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-radius: 50%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-button:hover {
+    background-color: #f3f4f6;
+}
+
+.icon {
+    color: #06b6d4; /* Change color to blue */
+    width: 25px;
+    height: 25px;
+}

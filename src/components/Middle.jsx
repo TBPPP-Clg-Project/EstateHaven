@@ -10,16 +10,16 @@ const Middle = () => {
               <div className="space-y-8">
                 <div className="space-y-4">
                   <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-                    Discover<br />
-                    Most Suitable<br />
-                    Property
+                  Find Your<br />
+                  Perfect Home<br />
+                  Instantly.
                   </h1>
                   <p className="text-teal-600 text-base md:text-lg">
-                    Find a variety of properties that suit you very easily,
-                    forget all difficulties in finding a residence for you
+                    From budget-friendly to luxurious, 
+                    find the residence of your dreams without breaking a sweat.
                   </p>
                 </div>
-    
+
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-4 pt-8">
                   <div className="text-center md:text-left">
