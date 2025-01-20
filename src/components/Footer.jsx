@@ -9,7 +9,7 @@ const Footer = () => {
           <div>
             <h3 className="footer-heading">About Us</h3>
             <p className="footer-text">
-              EstateHeaven is your premier destination for high-end real estate.
+              EstateHaven is your premier destination for high-end real estate.
               We specialize in luxury properties across the globe.
             </p>
           </div>
@@ -23,11 +23,11 @@ const Footer = () => {
               </div>
               <div className="footer-item">
                 <Phone className="footer-icon" />
-                <span>+91 (555) 123-6567</span>
+                <span>+91 0000011111</span>
               </div>
               <div className="footer-item">
                 <MapPin className="footer-icon" />
-                <span>London, 789 Lakeside Road</span>
+                <span>GLA University, Mathura</span>
               </div>
             </div>
           </div>

@@ -23,15 +23,15 @@ const Middle = () => {
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-4 pt-8">
                   <div className="text-center md:text-left">
-                    <p className="text-2xl md:text-3xl font-bold">9K<span className="text-orange-500 ml-1">+</span></p>
+                    <p className="text-2xl md:text-3xl font-bold">0<span className="text-orange-500 ml-1">+</span></p>
                     <p className="text-xs md:text-sm text-gray-400">Premium<br />Product</p>
                   </div>
                   <div className="text-center md:text-left">
-                    <p className="text-2xl md:text-3xl font-bold">2K<span className="text-orange-500 ml-1">+</span></p>
+                    <p className="text-2xl md:text-3xl font-bold">0<span className="text-orange-500 ml-1">+</span></p>
                     <p className="text-xs md:text-sm text-gray-400">Happy<br />Customer</p>
                   </div>
                   <div className="text-center md:text-left">
-                    <p className="text-2xl md:text-3xl font-bold">28K<span className="text-orange-500 ml-1">+</span></p>
+                    <p className="text-2xl md:text-3xl font-bold">0<span className="text-orange-500 ml-1">+</span></p>
                     <p className="text-xs md:text-sm text-gray-400">Awards<br />Winning</p>
                   </div>
                 </div>
