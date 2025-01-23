@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useAuth0 } from "@auth0/auth0-react";
 import './LoginSignup.css';
 
 const LoginSignup = () => {
+  const [isLoginSignupOpen, setLoginSignupOpen] = useState(false); 
+  const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
   const [isSignUpMode, setIsSignUpMode] = useState(false); 
   const [formData, setFormData] = useState({
     name: '',
@@ -10,7 +13,10 @@ const LoginSignup = () => {
     password: '',
     confirmPassword: '', 
   });
-
+ 
+  const handleDatabaseLoginClick = () => {
+    setLoginSignupOpen(true); // Open the custom login/signup modal
+  };
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -83,14 +89,16 @@ const LoginSignup = () => {
   };
 
   return (
-    <div className={`container ${isSignUpMode ? 'sign-up-mode' : ''}`}>
+    // 
+    <div className={`container ${isSignUpMode ? "sign-up-mode" : ""}`}>
       <div className="forms-container">
         <div className="signin-signup">
-          {/* Login Form */}
+          {/* Sign In Form */}
           <form className="sign-in-form" onSubmit={handleLogin}>
-            <h2 className="title">Sign In</h2>
+            <h2 className="title">Sign in</h2>
             <div className="input-field">
               <i className="fas fa-user"></i>
+              {/* <input type="text" placeholder="Username" /> */}
               <input
                 type="email"
                 placeholder="Email"
@@ -102,6 +110,7 @@ const LoginSignup = () => {
             </div>
             <div className="input-field">
               <i className="fas fa-lock"></i>
+              {/* <input type="password" placeholder="Password" /> */}
               <input
                 type="password"
                 placeholder="Password"
@@ -112,14 +121,17 @@ const LoginSignup = () => {
               />
             </div>
             <input type="submit" value="Login" className="btn solid" />
-            
+            <button className="second-option" onClick={loginWithRedirect} >
+                      Login with Google
+                    </button>
           </form>
 
-          {/* Signup Form */}
+          {/* Sign Up Form */}
           <form className="sign-up-form" onSubmit={handleSignUp}>
-            <h2 className="title">Sign Up</h2>
+            <h2 className="title">Sign up</h2>
             <div className="input-field">
               <i className="fas fa-user"></i>
+              {/* <input type="text" placeholder="Username" /> */}
               <input
                 type="text"
                 placeholder="Name"
@@ -130,7 +142,8 @@ const LoginSignup = () => {
               />
             </div>
             <div className="input-field">
-              <i className="fas fa-user"></i>
+              <i className="fas fa-envelope"></i>
+              {/* <input type="email" placeholder="Email" /> */}
               <input
                 type="email"
                 placeholder="Email"
@@ -142,6 +155,7 @@ const LoginSignup = () => {
             </div>
             <div className="input-field">
               <i className="fas fa-lock"></i>
+              {/* <input type="password" placeholder="Password" /> */}
               <input
                 type="password"
                 placeholder="Password"
@@ -162,8 +176,10 @@ const LoginSignup = () => {
                 required
               />
             </div>
-            <input type="submit" value="Sign Up" className="btn" />
-            
+            <input type="submit" className="btn" value="Sign up" />
+            <button className="second-option" onClick={loginWithRedirect} >
+            Sign up with Google
+                    </button>
           </form>
         </div>
       </div>
@@ -172,8 +188,10 @@ const LoginSignup = () => {
       <div className="panels-container">
         <div className="panel left-panel">
           <div className="content">
-            <h3>New here?</h3>
-            <p>Sign up and discover great properties.</p>
+            <h3>New here ?</h3>
+            <p>
+            Sign up and discover great properties
+            </p>
             <button
               className="btn transparent"
               id="sign-up-btn"
@@ -182,12 +200,14 @@ const LoginSignup = () => {
               Sign Up
             </button>
           </div>
-          <img src="img/log.svg" className="image" alt="" />
+          <img src="building2.png" className="image" alt="building image" />
         </div>
         <div className="panel right-panel">
           <div className="content">
-            <h3>One of us?</h3>
-            <p>Login to continue exploring your dream homes.</p>
+            <h3>One of us ?</h3>
+            <p>
+            Login to continue exploring your dream homes.
+            </p>
             <button
               className="btn transparent"
               id="sign-in-btn"
@@ -196,7 +216,11 @@ const LoginSignup = () => {
               Sign In
             </button>
           </div>
-          <img src="img/register.svg" className="image" alt="" />
+          <img
+            src="building.png"
+            className="image"
+            alt="building picture"
+          />
         </div>
       </div>
     </div>
