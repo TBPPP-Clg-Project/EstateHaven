@@ -1,19 +1,16 @@
 /* Navbar Styles */
 .navbar {
   position: absolute;
-  top: 3px;
+  top: 9px;
   width: 100%;
   background-color: transparent;
   z-index: 50;
 }
 
-.navbar-container {
+.navbar-content {
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 16px;
-}
-
-.navbar-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,9 +21,9 @@
 .logo-section {
   display: flex;
   align-items: center; 
-  justify-content: center;
+  justify-content:left;
   flex-grow: 1;
-  margin-left: 170px;
+  margin-left: -20px;
 }
 
 .logo-icon {
@@ -45,16 +42,17 @@
 .nav-links {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   margin: 0;
   position: absolute;
-  left: 120px;
+  left: 490px;
 }
 
 .nav-link {
   color: white;
   padding: 4px 8px;
-  font-size: 15px;
+  font-size: 16px;
   border-radius: 4px;
   text-decoration: none;
   transition: all 0.3s;

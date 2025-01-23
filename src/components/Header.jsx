@@ -24,29 +24,6 @@ export const Header = () => {
                 <div className="header-content">
                     <p>It's great to be home!</p>
                     <h1>Find Your Perfect Home</h1>
-                    <div className="options">
-                        <a
-                            href="#"
-                            className={`option-link ${activeOption === "Buy" ? "active" : ""}`}
-                            onClick={() => handleOptionClick("Buy")}
-                        >
-                            Buy
-                        </a>
-                        <a
-                            href="#"
-                            className={`option-link ${activeOption === "Rent" ? "active" : ""}`}
-                            onClick={() => handleOptionClick("Rent")}
-                        >
-                            Rent
-                        </a>
-                        <a
-                            href="#"
-                            className={`option-link ${activeOption === "Sold" ? "active" : ""}`}
-                            onClick={() => handleOptionClick("Sold")}
-                        >
-                            Sold
-                        </a>
-                    </div>
                 </div>
                 <div className="search-bar">
                     <select>

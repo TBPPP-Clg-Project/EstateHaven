@@ -33,19 +33,19 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-container">
         <div className="navbar-content">
-          {/* Navigation Links */}
-          <div className="nav-links">
-            <a href="#properties" className="nav-link">Properties</a>
-            <a href="#agents" className="nav-link">Agents</a>
-            <a href="#About" className="nav-link">About</a>
-          </div>
 
           {/* Logo Section */}
           <div className="logo-section">
             <Building2 size={32} className="logo-icon" />
             <h1 className="logo-title">EstateHaven</h1>
+          </div>
+
+          {/* Navigation Links */}
+          <div className="nav-links">
+            <a href="#properties" className="nav-link">Properties</a>
+            <a href="#agents" className="nav-link">Agents</a>
+            <a href="#About" className="nav-link">About</a>
           </div>
 
           {/* Profile Section */}
@@ -59,7 +59,7 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <button className="btn custom-login-btn" onClick={handleCustomLoginClick}>
+                <button className="btn login-btn" onClick={handleCustomLoginClick}>
                   Login
                 </button>
                 {isDropdownOpen && (
@@ -76,7 +76,6 @@ const Navbar = () => {
             )}
           </div>
         </div>
-      </div>
 
       {/* Render LoginSignup Component as Modal */}
       {isLoginSignupOpen && (
