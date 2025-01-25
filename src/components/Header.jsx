@@ -27,12 +27,27 @@ export const Header = () => {
                 </div>
                 <div className="search-bar">
                     <select>
-                        <option>Type</option>
+                        <option>Property Type</option>
+                        <option value="apartment">Apartment</option>
+                        <option value="house">House</option>
+                        <option value="villa">Villa</option>
+                        <option value="shop">Shop</option>
                     </select>
                     <select>
                         <option>Location</option>
+                        {/* Cities from India */}
+                        <option value="delhi">Delhi</option>
+                        <option value="mumbai">Mumbai</option>
+                        <option value="bangalore">Bangalore</option>
+                        <option value="chennai">Chennai</option>
+                        <option value="kolkata">Kolkata</option>
+                        <option value="hyderabad">Hyderabad</option>
+                        <option value="pune">Pune</option>
+                        <option value="gurgaon">Gurgaon</option>
+                        <option value="noida">Noida</option>
+                        <option value="chandigarh">Chandigarh</option>
                     </select>
-                    <input placeholder=" Price Range" type="text" />
+                    <input placeholder="Maximum Budget" type="text" />
                     <button>
                         <FontAwesomeIcon icon={faSearch} style={{ marginRight: "5px" }} />
                         Search

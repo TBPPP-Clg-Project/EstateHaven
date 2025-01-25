@@ -1,7 +1,7 @@
-/* Navbar Styles */
+/* Navbar */
 .navbar {
   position: absolute;
-  top: 9px;
+  top: 0;
   width: 100%;
   background-color: transparent;
   z-index: 50;
@@ -14,28 +14,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 48px;
+  height: 60px;
 }
 
 /* Logo Section */
 .logo-section {
   display: flex;
-  align-items: center; 
-  justify-content:left;
+  align-items: center;
+  justify-content: flex-start;
   flex-grow: 1;
-  margin-left: -20px;
 }
 
 .logo-icon {
   color: white;
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
 .logo-title {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
   color: #f3f4f6;
-  text-align: center;
 }
 
 /* Navigation Links */
@@ -43,15 +41,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin: 0;
+  gap: 20px;
   position: absolute;
-  left: 490px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-link {
   color: white;
-  padding: 4px 8px;
+  padding: 8px 12px;
   font-size: 16px;
   border-radius: 4px;
   text-decoration: none;
@@ -59,140 +57,181 @@
 }
 
 .nav-link:hover {
-  color: #f3f4f6;
+  background-color: #f3f4f6;
+  color: #333;
 }
 
 /* Profile Section */
 .profile-section {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  position: relative; /* Position relative for dropdown to align below this */
 }
 
-.profile-menu {
-  position: relative;
-}
-.user{
-  color: white;
+.welcome-message {
+  font-size: 16px;
+  color: #edebeb;
 }
 
 .profile-button {
-  display: flex;
-  align-items: center;
-  padding: 4px;
-  border-radius: 50%;
   background: none;
   border: none;
   cursor: pointer;
 }
 
-.icon {
+.profile-icon {
   color: white;
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Position it below the profile section */
+  left: 50%;
+  transform: translateX(-50%); /* Center it with the profile icon */
+  background-color: rgba(255, 255, 255, 0.8); /* Light translucent background */
+  color: #333; /* Dark text for contrast */
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  width: 140px; /* Slightly smaller width */
+  border-radius: 10px;
+  backdrop-filter: blur(8px); /* Apply blur effect for a modern touch */
+  padding: 6px 0; /* Reduce the padding to make it slimmer */
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  padding: 8px 16px; /* Reduced padding for slimmer items */
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s;
+  border-radius: 6px; /* Rounded corners for items */
+  font-size: 14px; /* Smaller font size for a more compact look */
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Slight hover effect */
+  transform: translateX(5px); /* Small shift to add dynamic feel */
+}
+
+/* Additional refinements */
+.dropdown-item:active {
+  background-color: rgba(0, 0, 0, 0.2); /* Active item effect */
+}
+
+
+/* Modal for Login/Signup */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  width: 400px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Login Button */
+.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.login-btn {
+  background-color: #007bff;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+  .navbar-content {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .logo-section {
-      margin-left: 0;
-      justify-content: flex-start;
+    margin-left: 0;
+    justify-content: flex-start;
   }
 
   .nav-links {
-      position: static;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 15px;
+    justify-content: center;
+    gap: 15px;
   }
 
   .logo-title {
-      font-size: 28px;
-  }
-
-  .navbar-content {
-      flex-wrap: wrap;
-      justify-content: center;
+    font-size: 22px;
   }
 }
 
 @media (max-width: 768px) {
   .navbar-content {
-      flex-direction: column;
-      align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
   }
 
   .nav-links {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 6px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
   }
 
-  .phone-section,
   .profile-section {
-      margin-top: 10px;
+    margin-top: 10px;
   }
 
   .logo-title {
-      font-size: 24px;
+    font-size: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .nav-links {
-      display: none; /* Hide navigation links on small screens */
+    display: none; /* Hide nav links on small screens */
   }
 
-  .profile-section,
-  .phone-section {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 4px;
+  .profile-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
   }
 
   .logo-title {
-      font-size: 20px;
+    font-size: 18px;
   }
-}
-
-/* Add these styles to Navbar.css */
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: white;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  display: flex;
-  flex-direction: column; /* Display items in a column */
-}
-
-.dropdown-item {
-  padding: 10px 20px;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.dropdown-item:hover {
-  background-color: #f0f0f0;
-}
-
-.welcome-message {
-  margin-right: 10px;
-  font-size: 16px;
-  color: #edebeb;
-}
-
-.logout-btn {
-  background-color: #ff4d4d;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.logout-btn:hover {
-  background-color: #ff1a1a;
 }
