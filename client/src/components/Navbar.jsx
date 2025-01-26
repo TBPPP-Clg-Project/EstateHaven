@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Building2, User } from 'lucide-react';
 import './Navbar.css';
 import { useAuth0 } from "@auth0/auth0-react";
@@ -55,14 +56,15 @@ const Navbar = () => {
           <h1 className="logo-title">EstateHaven</h1>
         </div>
 
-        {/* Navigation Links */}
-        <div className="nav-links">
-          <a href="#home" className="nav-link">Home</a>
-          <a href="#buy" className="nav-link">Buy & Rent</a>
-          <a href="#sell" className="nav-link">Sell</a>
-          <a href="#HavenBot" className="nav-link">HavenBot</a>
-          <a href="#About" className="nav-link">About us</a>
-        </div>
+
+      <div className="nav-links">
+      <a href="#home" className="nav-link">Home</a>
+      <Link to="/buy" className="nav-link">Buy & Rent</Link>
+      <a href="#sell" className="nav-link">Sell</a>
+      <a href="#HavenBot" className="nav-link">HavenBot</a>
+      <a href="#About" className="nav-link">About us</a>
+      </div>
+
 
         {/* Profile Section */}
         <div className="profile-section">
