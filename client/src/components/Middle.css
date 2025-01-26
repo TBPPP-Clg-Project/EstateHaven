@@ -1,0 +1,120 @@
+.middle-container {
+  min-height: 100vh;
+  background-color: #1a202c;
+  color: white;
+}
+
+.middle-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.middle-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .middle-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.text-section .title {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.25;
+  color: whitesmoke;
+}
+
+@media (min-width: 768px) {
+  .text-section .title {
+    font-size: 3rem;
+  }
+}
+
+.text-section .subtitle {
+  color: #4fd1c5;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .text-section .subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .stat-value {
+    font-size: 2rem;
+  }
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #a0aec0;
+  margin-top: 0.5rem;
+}
+
+.highlight {
+  color: #f97316;
+  margin-left: 0.25rem;
+}
+
+.image-section {
+  position: relative;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .image-section {
+    margin-top: 0;
+  }
+}
+
+.image-wrapper {
+  position: relative;
+  aspect-ratio: 1 / 1;
+}
+
+.image-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 50% 50% 0 0;
+  border: 2px solid #4a5568;
+}
+
+.image-content {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 50% 50% 0 0;
+  margin: 0.5rem;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
