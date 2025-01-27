@@ -6,13 +6,13 @@ import Middle from './components/Middle';
 import Footer from './components/Footer';
 import About from './components/About';
 import Navbar from './components/Navbar';
-import Buy from './components/BuyRent';
+import BuyRent from './components/BuyRent';
 import AboutUs from './components/About';
+import Sell from './components/Sell';
 
 const App = () => {
   return (
     <Router>
-      
       <Routes>
         <Route path="/" element={
           <div>
@@ -24,7 +24,8 @@ const App = () => {
             <Footer />
           </div>
         } />
-        <Route path="/buy" element={<div><Navbar /> <Buy /></div>} />
+        <Route path="/buy" element={<div><Navbar /> <BuyRent /></div>} />
+        <Route path="/sell" element={<div><Navbar /> <Sell /></div>} />
         <Route path="/About" element={<AboutUs />} />
       </Routes>
     </Router>
