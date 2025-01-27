@@ -1,0 +1,119 @@
+.buy-rent-container {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  background-color: #f4f3f3;
+}
+.search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.search-bar select,
+.search-bar input,
+.search-bar button {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+
+.search-bar button {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+}
+
+.search-bar button:hover {
+  background-color: #0056b3;
+}
+
+/* Properties section */
+.properties {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Property card styling */
+.property-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.property-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Property content */
+.property-content {
+  padding: 15px;
+}
+
+.property-content h2 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.property-details,
+.property-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.property-details span,
+.property-stats span {
+  flex: 1;
+  text-align: center;
+}
+
+.description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.property-content button {
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: #fff;
+  margin-left:130px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.property-content button:hover {
+  background-color: #218838;
+}
+
+/* No results message */
+.no-results {
+  font-size: 16px;
+  color: #777;
+  text-align: center;
+  padding: 20px;
+}

@@ -4,7 +4,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import './LoginSignup.css';
 
 const LoginSignup = () => {
-  const [isLoginSignupOpen, setLoginSignupOpen] = useState(true); 
   const { loginWithRedirect } = useAuth0();
   const [isSignUpMode, setIsSignUpMode] = useState(false); 
   const [formData, setFormData] = useState({

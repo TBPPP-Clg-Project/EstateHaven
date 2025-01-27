@@ -60,7 +60,7 @@ const Navbar = () => {
       <div className="nav-links">
       <a href="#home" className="nav-link">Home</a>
       <Link to="/buy" className="nav-link">Buy & Rent</Link>
-      <a href="#sell" className="nav-link">Sell</a>
+      <Link to="/sell" className="nav-link">Sell</Link>
       <a href="#HavenBot" className="nav-link">HavenBot</a>
       <a href="#About" className="nav-link">About us</a>
       </div>
