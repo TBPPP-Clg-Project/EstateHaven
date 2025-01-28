@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 import "./Header.css";
 
 export const Header = () => {
@@ -20,20 +21,20 @@ export const Header = () => {
     ];
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [activeOption, setActiveOption] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImageIndex((prevIndex) => 
                 (prevIndex + 1) % backgroundImages.length
             );
-        }, 5000); // Change image every 5 seconds
+        }, 5000);
 
         return () => clearInterval(interval);
     }, []);
 
-    const handleOptionClick = (option) => {
-        setActiveOption(option);
+    const handleSearchClick = () => {
+        navigate("/BuyRent");
     };
 
     return (
@@ -51,15 +52,15 @@ export const Header = () => {
                     <h1>Find Your Perfect Home</h1>
                 </div>
                 <div className="search-bar">
-                    <select>
-                        <option>Property Type</option>
+                    <select name="type">
+                        <option value="">Property Type</option>
                         <option value="apartment">Apartment</option>
                         <option value="house">House</option>
                         <option value="villa">Villa</option>
                         <option value="shop">Shop</option>
                     </select>
-                    <select>
-                        <option>Location</option>
+                    <select name="location">
+                        <option value="">Location</option>
                         <option value="delhi">Delhi</option>
                         <option value="mumbai">Mumbai</option>
                         <option value="bangalore">Bangalore</option>
@@ -71,8 +72,12 @@ export const Header = () => {
                         <option value="noida">Noida</option>
                         <option value="chandigarh">Chandigarh</option>
                     </select>
-                    <input placeholder="Maximum Budget" type="text" />
-                    <button>
+                    <input
+                        name="maxPrice"
+                        placeholder="Maximum Budget"
+                        type="text"
+                    />
+                    <button onClick={handleSearchClick}>
                         <FontAwesomeIcon icon={faSearch} style={{ marginRight: "5px" }} />
                         Search
                     </button>

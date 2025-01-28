@@ -52,23 +52,23 @@ const Navbar = () => {
       <div className="navbar-content">
         {/* Logo Section */}
         <div className="logo-section">
-          <Building2 size={28} className="logo-icon" />
+          <Link to="/">
+            <Building2 size={28} className="logo-icon" />
+          </Link>
           <h1 className="logo-title">EstateHaven</h1>
         </div>
 
-
-      <div className="nav-links">
-      <a href="#home" className="nav-link">Home</a>
-      <Link to="/buy" className="nav-link">Buy & Rent</Link>
-      <Link to="/sell" className="nav-link">Sell</Link>
-      <a href="#HavenBot" className="nav-link">HavenBot</a>
-      <a href="#About" className="nav-link">About us</a>
-      </div>
-
+        <div className="nav-links">
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/buy" className="nav-link">Buy & Rent</Link>
+          <Link to="/sell" className="nav-link">Sell</Link>
+          <a href="#HavenBot" className="nav-link">HavenBot</a>
+          <Link to="/About" className="nav-link">About</Link>
+        </div>
 
         {/* Profile Section */}
         <div className="profile-section">
-          {isAuthenticated || userState ? (  // Check if the user is authenticated or stored in localStorage
+          {isAuthenticated || userState ? (
             <>
               <button className="profile-button" onClick={handleProfileClick}>
                 <User size={24} className="profile-icon" />

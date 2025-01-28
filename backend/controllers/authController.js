@@ -39,6 +39,7 @@ const generateToken = (userId) => {
       }
   
       const token = generateToken(user._id);
+      res.cookie('token', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production' });
       res.status(200).json({ user, token });
     } catch (error) {
       res.status(500).json({ message: 'Login failed. Please try again.', error: error.message });
