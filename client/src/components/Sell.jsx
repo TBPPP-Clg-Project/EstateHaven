@@ -15,7 +15,7 @@ const Sell = () => {
     type: '',
     image: null,
   });
-  const [showPopup, setShowPopup] = useState(false); // State for popup
+  const [showPopup, setShowPopup] = useState(false); //popup
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,9 +36,18 @@ const Sell = () => {
     e.preventDefault();
     const formDataToSend = new FormData();
     for (const key in formData) {
-      formDataToSend.append(key, formData[key]);
+      if (key === 'image' && formData[key]) {
+        formDataToSend.append(key, formData[key], formData[key].name);
+      } else {
+        formDataToSend.append(key, formData[key]);
+      }
     }
-
+  
+    console.log('Submitting form with data:');
+    formDataToSend.forEach((value, key) => {
+      console.log(key, value);
+    });
+  
     try {
       const response = await axios.post('http://localhost:5001/api/properties', formDataToSend, {
         headers: {
@@ -46,8 +55,7 @@ const Sell = () => {
         },
       });
       console.log('Property added:', response.data);
-      setShowPopup(true); // Show the popup on success
-      // Reset form after submission
+      setShowPopup(true);
       setFormData({
         title: '',
         location: '',
@@ -61,7 +69,7 @@ const Sell = () => {
         image: null,
       });
     } catch (error) {
-      console.error('Error adding property:', error);
+      console.error('Error adding property:', error.response ? error.response.data : error.message);
     }
   };
 

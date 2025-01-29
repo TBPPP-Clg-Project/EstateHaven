@@ -18,7 +18,7 @@ const BuyRent = () => {
   useEffect(() => {
     axios.get('http://localhost:5001/api/properties')
       .then((res) => {
-        console.log('API response:', res.data); // Log the API response
+        console.log('API response:', res.data);
         setProperties(res.data);
         setFilteredProperties(res.data);
       })
@@ -36,10 +36,10 @@ const BuyRent = () => {
   };
 
   const handleSearch = () => {
-    console.log('Filters:', filters); // Log the filters object
+    console.log('Filters:', filters); 
 
     const filtered = properties.filter((prop) => {
-      console.log('Property:', prop); // Log the entire property object
+      console.log('Property:', prop); 
 
       const matchesLocation = filters.location === "" || (prop.location && prop.location.toLowerCase().includes(filters.location.toLowerCase()));
       const matchesMinPrice = filters.minPrice === "" || prop.price >= parseFloat(filters.minPrice);
@@ -56,7 +56,7 @@ const BuyRent = () => {
       return matchesLocation && matchesMinPrice && matchesMaxPrice && matchesBedrooms && matchesType;
     });
 
-    console.log('Filtered Properties:', filtered); // Log the filtered properties
+    console.log('Filtered Properties:', filtered); 
     setFilteredProperties(filtered);
   };
 
@@ -110,13 +110,13 @@ const BuyRent = () => {
           <div className="no-results">No properties found matching your filters.</div>
         ) : (
           filteredProperties.map((prop) => (
-            <div 
-              key={prop._id} 
+            <div
+              key={prop._id}
               className="property-card"
             >
               <img
-                src={prop.image ? `/uploads/${prop.image}` : 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHByb3BlcnR5fGVufDB8fDB8fHww'} 
-                alt={prop.title} 
+                src={prop.image ? prop.image : 'https://via.placeholder.com/300'}
+                alt={prop.title}
               />
               <div className="property-content">
                 <h2>{prop.title}</h2>
