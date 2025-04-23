@@ -15,7 +15,8 @@ const Sell = () => {
     type: '',
     image: null,
   });
-  const [showPopup, setShowPopup] = useState(false); //popup
+
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -42,12 +43,7 @@ const Sell = () => {
         formDataToSend.append(key, formData[key]);
       }
     }
-  
-    console.log('Submitting form with data:');
-    formDataToSend.forEach((value, key) => {
-      console.log(key, value);
-    });
-  
+
     try {
       const response = await axios.post('http://localhost:5001/api/properties', formDataToSend, {
         headers: {
@@ -76,36 +72,57 @@ const Sell = () => {
   const closePopup = () => setShowPopup(false);
 
   return (
-    <div className="sell-container">
-      <h2>Sell Your Property</h2>
-      <form onSubmit={handleSubmit} className="sell-form">
-        <input type="text" name="title" placeholder="Title" value={formData.title} onChange={handleChange} required />
-        <input type="text" name="location" placeholder="Location" value={formData.location} onChange={handleChange} required />
-        <input type="number" name="bedrooms" placeholder="Bedrooms" value={formData.bedrooms} onChange={handleChange} required />
-        <input type="number" name="bathrooms" placeholder="Bathrooms" value={formData.bathrooms} onChange={handleChange} required />
-        <input type="number" name="parking" placeholder="Parking" value={formData.parking} onChange={handleChange} required />
-        <input type="number" name="area" placeholder="Area (sq ft)" value={formData.area} onChange={handleChange} required />
-        <input type="number" name="price" placeholder="Price" value={formData.price} onChange={handleChange} required />
-        <textarea name="description" placeholder="Description" value={formData.description} onChange={handleChange} required></textarea>
-        <select name="type" value={formData.type} onChange={handleChange} required>
-          <option value="">Select Type</option>
-          <option value="Apartment">Apartment</option>
-          <option value="House">House</option>
-          <option value="Villa">Villa</option>
-          <option value="Shop">Shop</option>
-        </select>
-        <input type="file" name="image" onChange={handleFileChange} />
-        <button type="submit">Submit</button>
-      </form>
+    <div className="sell-page-wrapper">
+      <div className="sell-background-overlay"></div>
 
-      {showPopup && (
-        <div className="popup-overlay">
-          <div className="popup-content">
-            <h3>Property Submitted Successfully!</h3>
-            <button onClick={closePopup}>Close</button>
-          </div>
+      <div className="sell-container">
+        <div className="sell-header">
+          <h2>Sell Your Property</h2>
+          <p>Provide details to attract the right buyers!</p>
         </div>
-      )}
+
+        <form onSubmit={handleSubmit} className="sell-form">
+          <input type="text" name="title" placeholder="Title" value={formData.title} onChange={handleChange} required />
+          <input type="text" name="location" placeholder="Location" value={formData.location} onChange={handleChange} required />
+
+          <div className="form-row">
+            <input type="number" name="bedrooms" placeholder="Bedrooms" value={formData.bedrooms} onChange={handleChange} required />
+            <input type="number" name="bathrooms" placeholder="Bathrooms" value={formData.bathrooms} onChange={handleChange} required />
+          </div>
+
+          <div className="form-row">
+            <input type="number" name="parking" placeholder="Parking Spaces" value={formData.parking} onChange={handleChange} required />
+            <input type="number" name="area" placeholder="Area (sq ft)" value={formData.area} onChange={handleChange} required />
+          </div>
+
+          <input type="number" name="price" placeholder="Price (₹)" value={formData.price} onChange={handleChange} required />
+          <textarea name="description" placeholder="Description" value={formData.description} onChange={handleChange} required></textarea>
+
+          <select name="type" value={formData.type} onChange={handleChange} required>
+            <option value="">Select Type</option>
+            <option value="Apartment">Apartment</option>
+            <option value="House">House</option>
+            <option value="Villa">Villa</option>
+            <option value="Shop">Shop</option>
+          </select>
+
+          <label htmlFor="image-upload" className="file-label">
+            Upload Image
+            <input id="image-upload" type="file" name="image" onChange={handleFileChange} />
+          </label>
+
+          <button type="submit">Submit</button>
+        </form>
+
+        {showPopup && (
+          <div className="popup-overlay">
+            <div className="popup-content">
+              <h3>Property Submitted Successfully!</h3>
+              <button onClick={closePopup}>Close</button>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

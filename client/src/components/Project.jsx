@@ -7,7 +7,7 @@ const Project = () => {
   const [slideDirection, setSlideDirection] = useState('');
 
   const properties = [
-    {
+    {         
       id: 1,
       image: "/project_img_1.jpg",
       location: "Mumbai",
