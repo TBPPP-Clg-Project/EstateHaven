@@ -62,13 +62,13 @@ const Footer = () => {
         <div className="footer-bottom">
           <p>© 2025 EstateHaven. All rights reserved.</p>
           <div className="footer-social">
-            <a href="#" className="footer-social-link">
+            <a className="footer-social-link">
               <Facebook />
             </a>
-            <a href="#" className="footer-social-link">
+            <a className="footer-social-link">
               <Twitter />
             </a>
-            <a href="#" className="footer-social-link">
+            <a className="footer-social-link">
               <Instagram />
             </a>
           </div>

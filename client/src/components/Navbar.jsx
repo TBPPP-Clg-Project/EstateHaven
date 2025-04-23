@@ -10,9 +10,8 @@ const Navbar = () => {
   const [isLoginSignupOpen, setLoginSignupOpen] = useState(false);
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
   
-  const dropdownRef = useRef(null);  // Reference for dropdown menu
+  const dropdownRef = useRef(null);
 
-  // Use localStorage to check if the user is already logged in
   const [userState, setUserState] = useState(JSON.parse(localStorage.getItem('userInfo')) || null);
 
   const handleProfileClick = () => {
@@ -25,15 +24,15 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout({ returnTo: window.location.origin });
-    localStorage.removeItem('userInfo');  // Remove user info from localStorage on logout
-    setUserState(null);  // Clear user state
+    localStorage.removeItem('userInfo');
+    setUserState(null);
   };
 
   const handleLoginClick = () => {
     setLoginSignupOpen(true);
   };
 
-  // Close dropdown if clicked outside
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -50,7 +49,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-content">
-        {/* Logo Section */}
+        
         <div className="logo-section">
           <Link to="/">
             <Building2 size={28} className="logo-icon" />
@@ -62,11 +61,9 @@ const Navbar = () => {
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/buy" className="nav-link">Buy & Rent</Link>
           <Link to="/sell" className="nav-link">Sell</Link>
-          <a href="#HavenBot" className="nav-link">HavenBot</a>
-          <Link to="/About" className="nav-link">About</Link>
         </div>
 
-        {/* Profile Section */}
+        
         <div className="profile-section">
           {isAuthenticated || userState ? (
             <>
@@ -90,7 +87,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Render LoginSignup Component as Modal */}
+      
       {isLoginSignupOpen && (
         <div className="modal">
           <div className="modal-content">

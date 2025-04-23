@@ -34,7 +34,7 @@ export const Header = () => {
     }, []);
 
     const handleSearchClick = () => {
-        navigate("/BuyRent");
+        navigate("/buy");
     };
 
     return (
