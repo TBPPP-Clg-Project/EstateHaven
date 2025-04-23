@@ -62,7 +62,6 @@ const Navbar = () => {
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/buy" className="nav-link">Buy & Rent</Link>
           <Link to="/sell" className="nav-link">Sell</Link>
-          <a href="#HavenBot" className="nav-link">HavenBot</a>
           <Link to="/About" className="nav-link">About</Link>
         </div>
 

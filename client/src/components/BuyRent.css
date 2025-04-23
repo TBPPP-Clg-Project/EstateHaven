@@ -1,16 +1,37 @@
+/* Buy/Rent Container */
 .buy-rent-container {
   font-family: 'Arial', sans-serif;
   padding: 20px;
-  background-color: #f4f3f3;
+  background-image: url('/Header4.jpg'); /* Background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: white; /* Text color for contrast */
+  position: relative;
 }
+
+/* Background overlay for readability */
+.buy-rent-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: -1;
+}
+
+/* Search Bar */
 .search-bar {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1); /* Darker semi-transparent background */
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   margin-bottom: 20px;
 }
 
@@ -18,11 +39,12 @@
 .search-bar input,
 .search-bar button {
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Slightly darker border */
   border-radius: 5px;
   font-size: 14px;
+  background-color: rgba(255, 255, 255, 0.1); /* Darker background for inputs */
+  color: #fff; /* White text for inputs */
 }
-
 
 .search-bar button {
   background-color: #007bff;
@@ -36,6 +58,25 @@
   background-color: #0056b3;
 }
 
+/* Specific Styles for Dropdown */
+.search-bar select {
+  background-color: rgba(255, 255, 255, 0.1); /* Dark background */
+  color: #fff; /* White text */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Slightly darker border */
+  font-size: 14px;
+}
+
+/* Styling the options of the dropdown */
+.search-bar select option {
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background for options */
+  color: #fff; /* White text for options */
+  padding: 10px;
+}
+
+.search-bar select option:hover {
+  background-color: rgba(0, 0, 0, 0.9); /* Darker option on hover */
+}
+
 /* Properties section */
 .properties {
   display: grid;
@@ -45,16 +86,16 @@
 
 /* Property card styling */
 .property-card {
-  background-color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .property-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
 }
 
 .property-card img {
@@ -70,7 +111,7 @@
 
 .property-content h2 {
   font-size: 18px;
-  color: #333;
+  color: #fff; /* White text for titles */
   margin-bottom: 10px;
 }
 
@@ -80,7 +121,7 @@
   justify-content: space-between;
   font-size: 14px;
   margin-bottom: 10px;
-  color: #666;
+  color: #bbb; /* Light gray text for details */
 }
 
 .property-details span,
@@ -91,7 +132,7 @@
 
 .description {
   font-size: 14px;
-  color: #555;
+  color: #ccc; /* Lighter gray for descriptions */
   margin-bottom: 15px;
 }
 
@@ -99,7 +140,7 @@
   padding: 10px 15px;
   background-color: #28a745;
   color: #fff;
-  margin-left:130px;
+  margin-left: 130px;
   border: none;
   border-radius: 5px;
   font-weight: bold;
@@ -113,7 +154,7 @@
 /* No results message */
 .no-results {
   font-size: 16px;
-  color: #777;
+  color: #bbb; /* Lighter gray for no results message */
   text-align: center;
   padding: 20px;
 }
